@@ -1,0 +1,46 @@
+using System;
+
+namespace _16._4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите N");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Random rand = new Random();
+            int[] a = new int[n];
+            Console.Write("Исходный массив ");
+            for (int i = 0; i < a.Length; i++)
+            {
+                a[i] = rand.Next(1, 99);
+                Console.Write("  " + a[i]);
+            }
+
+            Console.WriteLine();
+            Console.Write("Ответ ");
+            //    Console.Write(" "+a[0]);
+            //   Console.Write(" "+a[a.Length-1]);
+
+            //while (a.Length != n)
+            //{ 
+            //for (int i = 0; i <n; i = i + a[a.Length - 1])
+            //{
+            //    Console.Write(" " + a[i]);
+
+            //}
+            //}
+
+            for(int i=0; i < n / 2; i++)
+            {
+                Console.Write(" "+a[i]);
+                Console.Write(" "+a[n-i-1]);
+            }
+            if (n % 2 != 0)
+            {
+                Console.Write(" "+a[(n / 2)]);
+                return;
+            }
+        }
+    }
+}

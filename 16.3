@@ -1,0 +1,27 @@
+using System;
+
+namespace _16._3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите N");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите A");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите B");
+            int b = Convert.ToInt32(Console.ReadLine());
+            int sum = a + b;
+            var array = new int[n];
+            array[0] = a;
+            array[1] = b;
+            for (int i = 2; i < array.Length; i++)
+            {
+                array[i] = sum;
+                sum *= 2;
+            }
+            Console.WriteLine(string.Join(" ", array));
+        }
+    }
+}
